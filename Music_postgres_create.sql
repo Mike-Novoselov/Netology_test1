@@ -38,3 +38,11 @@ CREATE TABLE TrackCollection (
 	NameCollection VARCHAR(255) NOT NULL,
 	YearsOfCreation DATE NOT NULL
 );
+
+
+
+CREATE TABLE TrackCollectionTrack (
+	idCollection INTEGER REFERENCES TrackCollection(idCollection),
+	idTrack INTEGER REFERENCES ListTrack(idTrack),
+	PRIMARY KEY (idCollection, idTrack)
+);
