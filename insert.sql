@@ -1,32 +1,115 @@
-INSERT INTO ListGenre (NameGenre) VALUES ('рок'), ('метал'), ('панк'), ('фолк'), ('поп');
+# Заполнение таблицы ListGenre:
+INSERT INTO ListGenre (NameGenre) VALUES 
+('рок'),
+('метал'),
+('панк'),
+('фолк'),
+('поп');
 
-INSERT INTO ListMusiciant (nameMusiciant) VALUES
-('AC/DC'), ('Metallica'), ('Green Day'), ('Bob Dylan'), ('Madonna'), ('Queen'), ('Nirvana'), ('The Beatles');
+# Заполнение таблицы ListMusiciant:
+INSERT INTO ListMusiciant (nameMusiciant) VALUES 
+('Metallica'),
+('AC/DC'),
+('Green Day'),
+('Ed Sheeran'),
+('Taylor Swift'),
+('Imagine Dragons'),
+('Led Zeppelin'),
+('The Beatles');
 
-INSERT INTO GenreMusician (idMusicant, idGenere) VALUES
-(1, 1), (2, 2), (3, 3), (4, 4), (5, 5), (6, 1), (7, 1), (8, 1),
-(2, 1), (3, 1), (3, 2), (4, 5), (5, 5), (6, 5), (7, 2), (8, 2),
-(1, 1), (1, 2), (1, 5), (2, 1), (2, 2), (2, 5), (3, 1), (3, 3);
+# Заполнение таблицы GenreMusician (связь исполнителей с жанрами):
+INSERT INTO GenreMusician (idMusicant, idGenere) VALUES 
+(1, 2),
+(1, 1),
+(2, 1),
+(2, 2),
+(3, 3),
+(3, 1),
+(4, 5),
+(5, 5),
+(6, 1),
+(6, 2),
+(7, 1),
+(7, 2),
+(8, 1),
+(8, 4);
 
-INSERT INTO ListAlbum (nameAlbum, YearOfCreation) VALUES
-('Highway to Hell', '1979-07-27'), ('Master of Puppets', '1986-03-03'), ('Dookie', '1994-02-01'),
-('Blonde on Blonde', '1966-05-16'), ('Like a Virgin', '1984-11-12'), ('A Night at the Opera', '1975-11-21'),
-('Nevermind', '1991-09-24'), ('Abbey Road', '1969-09-26');
+# Заполнение таблицы ListAlbum:
+INSERT INTO ListAlbum (nameAlbum, YearOfCreation) VALUES 
+('Master of Puppets', '1986-03-03'),
+('Back in Black', '1980-07-25'),
+('American Idiot', '2004-09-20'),
+('÷', '2017-03-03'),
+('1989', '2014-10-27'),
+('Night Visions', '2012-09-04'),
+('Led Zeppelin IV', '1971-11-08'),
+('Abbey Road', '1969-09-26');
 
-INSERT INTO ListAlbumMusiciant (idMusican, idAlbum) VALUES
-(1, 1), (1, 6), (1, 8), (2, 2), (2, 8), (3, 3), (3, 7), (4, 4), (5, 5), (6, 6), (7, 7), (8, 1), (8, 3), (8, 4);
+# Заполнение таблицы ListAlbumMusiciant (связь исполнителей с альбомами):
+INSERT INTO ListAlbumMusiciant (idMusican, idAlbum) VALUES 
+(1, 1),
+(1, 2),
+(2, 2),
+(2, 1),
+(3, 3),
+(4, 4),
+(5, 5),
+(6, 6),
+(7, 7),
+(8, 8);
 
-INSERT INTO ListTrack (nameTrack, trackDuration, idAlbum) VALUES
-('Highway to Hell', '03:29', 1), ('Girls Got Rhythm', '03:24', 1), ('Bohemian Rhapsody', '05:55', 6),
-('Master of Puppets', '08:36', 2), ('Orion', '08:27', 2), ('Welcome Home (Sanitarium)', '06:28', 2),
-('Basket Case', '03:03', 3), ('When I Come Around', '02:58', 3), ('Longview', '03:59', 3),
-('Rainy Day Women #12 & 35', '04:36', 4), ('Visions of Johanna', '07:33', 4), ('I Want You', '03:07', 4),
-('Like a Virgin', '03:35', 5), ('Material Girl', '04:00', 5), ('Papa Don''t Preach', '04:29', 5),
-('Bohemian Rhapsody', '05:55', 7), ('Smells Like Teen Spirit', '05:01', 7), ('Come as You Are', '03:39', 7),
-('Come Together', '04:20', 8), ('Something', '03:03', 8), ('Here Comes the Sun', '03:05', 8);
+# Заполнение таблицы ListTrack:
+INSERT INTO ListTrack (nameTrack, trackDuration, idAlbum) VALUES 
+('Battery', '05:12', 1),
+('Master of Puppets', '08:36', 1),
+('Hells Bells', '05:12', 2),
+('Back in Black', '04:15', 2),
+('American Idiot', '02:54', 3),
+('Boulevard of Broken Dreams', '04:20', 3),
+('Shape of You', '03:53', 4),
+('Castle on the Hill', '04:21', 4),
+('Shake It Off', '03:39', 5),
+('Blank Space', '03:51', 5),
+('Radioactive', '03:08', 6),
+('Demons', '02:57', 6),
+('Stairway to Heaven', '08:02', 7),
+('my Black Dog', '04:54', 7),
+('Come Together', '04:19', 8),
+('Here Comes the Sun', '03:05', 8);
 
-INSERT INTO TrackCollection (NameCollection, YearsOfCreation) VALUES ('Best of Rock', '2021-01-01');
+# Заполнение таблицы TrackCollection:
+INSERT INTO TrackCollection (NameCollection, YearsOfCreation) VALUES 
+('Rock Anthems', '2000-01-01'),
+('Metal Mayhem', '2005-06-15'),
+('Pop Hits', '2010-12-31'),
+('Folk Favorites', '2015-04-22'),
+('Punk Rock Party', '2018-09-01'),
+('Classic Rock', '2020-01-01'),
+('Best of the 80s', '2021-06-15'),
+('Acoustic Sessions', '2022-12-31');
 
-INSERT INTO TrackCollectionTrack (idCollection, idTrack) VALUES
-(1, 1), (1, 2), (1, 6), (1, 7), (1, 8), (1, 16), (1, 17), (1, 18), (1, 19), (1, 20);
-
+# Заполнение таблицы TrackCollectionTrack (связь сборников с треками):
+INSERT INTO TrackCollectionTrack (idCollection, idTrack) VALUES 
+(1, 1),
+(1, 2),
+(2, 1),
+(2, 2),
+(2, 13),
+(3, 4),
+(3, 7),
+(3, 9),
+(4, 4),
+(4, 8),
+(4, 14),
+(5, 3),
+(5, 10),
+(5, 12),
+(6, 7),
+(6, 13),
+(6, 14),
+(7, 2),
+(7, 7),
+(7, 13),
+(8, 4),
+(8, 9),
+(8, 12);
